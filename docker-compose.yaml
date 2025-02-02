@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  unifi-controller:
+    image: jacobalberty/unifi:latest
+    container_name: unifi-controller
+    restart: unless-stopped
+    network_mode: host
+    volumes:
+      - ./unifi/config:/unifi
+    environment:
+      - TZ=America/New_York
+
+  watchtower:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_INTERVAL=86400  # Check for updates every 86400 seconds (24 hours)
