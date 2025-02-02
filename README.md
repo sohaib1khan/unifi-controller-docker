@@ -1,6 +1,6 @@
 # UniFi Controller Docker Setup with Watchtower
 
-his repository provides a **Docker Compose** setup for running the **UniFi Network Controller** in a Docker container, with **Watchtower** included to automatically update the container daily. The container is configured to run using the host network and persist data on the local filesystem.
+This repository provides a **Docker Compose** setup for running the **UniFi Network Controller** in a Docker container, with **Watchtower** included to automatically update the container daily. The container is configured to run using the host network and persist data on the local filesystem.
 
 ## 📝 **What This Setup Does**
 
