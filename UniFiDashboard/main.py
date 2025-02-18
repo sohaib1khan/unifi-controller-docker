@@ -2,6 +2,8 @@ import sys
 import requests
 import json
 import random
+import os
+import sys
 import keyring  # Import keyring to manage credentials
 from PyQt6.QtWidgets import (QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QTextEdit, QLineEdit, QInputDialog)
 from PyQt6.QtGui import QFont, QTextCharFormat, QColor, QTextCursor
@@ -9,8 +11,11 @@ from PyQt6.QtCore import QTimer, Qt  # ✅ Import Qt
 
 SERVICE_NAME = "UniFiDashboard"  # Unique identifier for keyring
 
+# Get the absolute path to the directory containing main.py
+BASE_DIR = os.path.dirname(os.path.abspath(sys.argv[0]))
+
 # UniFi Controller Details
-UNIFI_HOST = "https://192.168.1.1:8443" # Change to your UniFi Controller IP
+UNIFI_HOST = "https://192.168.1.1:8443"
 SITE = "default"  # Change if needed
 VERIFY_SSL = False  # Set to True if using valid SSL certs
 
